@@ -40,9 +40,8 @@ body {
 
 .like-btn--on {
   background-color: blue;
-  border: none;
+  border-color: blue;
   color: white;
-  font-weight: bold;
 }
 
 .like-icon {

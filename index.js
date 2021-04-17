@@ -8,7 +8,7 @@ const Post = (props) => {
 </div>
 <button class="like-btn">
   <div class="like-icon"></div>
-  <div>Olajkovat</div>
+  <div>Like</div>
 </button>
   `;
 
@@ -22,11 +22,10 @@ const Post = (props) => {
 
 const appElement = document.querySelector('#app');
 
-const post1Props = { text: 'Muj status 1' };
-const post1 = Post(post1Props);
-appElement.appendChild(post1);
-
-appElement.appendChild(Post({ text: 'Muj status 2' }));
-appElement.appendChild(Post({ text: 'Muj status 2' }));
-appElement.appendChild(Post({ text: 'Muj status 2' }));
-appElement.appendChild(Post({ text: 'Muj status 2' }));
+fetch('https://jsonplaceholder.typicode.com/comments')
+  .then((response) => response.json())
+  .then((data) => {
+    data.forEach((comment) => {
+      appElement.appendChild(Post({ text: comment.body }));
+    });
+  });

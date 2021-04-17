@@ -3,17 +3,19 @@
 const Post = (props) => {
   const element = document.createElement('div');
   element.classList.add('post');
-  element.innerHTML = `<div class="post__text">
-  ${props.text}
-</div>
-<button class="like-btn">
-  <div class="like-icon"></div>
-  <div>Like</div>
-</button>
-  `;
 
-  const likeBtn = element.querySelector('.like-btn');
-  likeBtn.addEventListener('click', () => {
+  const textElement = document.createElement('div');
+  textElement.className = 'post__text';
+  textElement.innerText = props.text;
+  element.appendChild(textElement);
+
+  const buttonElement = document.createElement('button');
+  buttonElement.className = 'like-btn';
+  buttonElement.innerHTML = `<div class="like-icon"></div>
+  <div>Like</div>`;
+  element.appendChild(buttonElement);
+
+  buttonElement.addEventListener('click', () => {
     likeBtn.classList.toggle('like-btn--on');
   });
 

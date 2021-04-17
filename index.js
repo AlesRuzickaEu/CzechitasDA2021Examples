@@ -16,7 +16,7 @@ const Post = (props) => {
   element.appendChild(buttonElement);
 
   buttonElement.addEventListener('click', () => {
-    likeBtn.classList.toggle('like-btn--on');
+    buttonElement.classList.toggle('like-btn--on');
   });
 
   return element;

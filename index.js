@@ -6,7 +6,7 @@ const Post = (props) => {
 
   const textElement = document.createElement('div');
   textElement.className = 'post__text';
-  textElement.innerText = props.text;
+  textElement.textContent = props.text;
   element.appendChild(textElement);
 
   const buttonElement = document.createElement('button');
